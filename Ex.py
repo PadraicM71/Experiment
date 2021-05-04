@@ -3,7 +3,13 @@ EMPTY_SIGN = '.'
 AI_SIGN = 'X'# as in our gamr ai always gose first
 OPPONENT_SIGN = 'O'
 
-board = ['.','.','.','.','.','.','.','.','.']
+board = "........."
+board1 = EMPTY_SIGN*9
+print(board)
+print(board1)
+print (type(board))
+print (type(board1))
+
 
 def print_board(board):
     print(" ")
@@ -23,6 +29,23 @@ def all_moves_from_board(board, sign):  # if empty square return positions of em
              move_list.append(board[:i] + sign + board[i+1:])
      return move_list
 
-all_moves_from_board(board, AI_SIGN)
+a=all_moves_from_board(board, AI_SIGN)
+print(a)
+
+
+empty_cell_count = sum(1 for cell in board if cell == EMPTY_SIGN)
+
+
+print(empty_cell_count)
+
+
+def all_moves_from_board_list(board_list, sign):
+    move_list = []
+    for board in board_list:
+        move_list.extend(all_moves_from_board(board, sign))
+    return move_list
+
+print(all_moves_from_board_list([EMPTY_SIGN * 9 ], AI_SIGN))
+print(all_moves_from_board_list([board], AI_SIGN))
 
 
