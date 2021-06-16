@@ -4,6 +4,7 @@
 pip install sklearn
 pip install nltk
 pip install wikipedia
+pip install sympy
 '''
 
 """CCT_TextAnalytics_Lecture.ipynb
